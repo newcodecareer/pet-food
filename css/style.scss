@@ -54,7 +54,7 @@ $box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   }
 }
 
-// just for test navbar display when scroll 
+// just for test navbar display when scroll
 // body {
 //   height: 300rem;
 // }
@@ -83,14 +83,14 @@ section {
   padding: 5rem 9%;
 }
 
-.heading{
+.heading {
   padding-bottom: 2rem;
   text-align: center;
   font-size: 3.5rem;
-  color:$black;
+  color: $black;
 
-  span{
-    color:$carrot-color;
+  span {
+    color: $carrot-color;
   }
 }
 
@@ -132,7 +132,7 @@ section {
 }
 
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(3rem);
   }
@@ -163,7 +163,7 @@ section {
   .logo {
     font-size: 2.5rem;
     color: $black;
-    font-weight: bold;
+    font-weight: bolder;
   }
 
   i {
@@ -240,7 +240,7 @@ section {
     .btn {
       @include form-btn();
       margin: 1.5rem 0;
-    }
+    } //this make the form btn different
 
     .links {
       display: flex;
@@ -269,7 +269,7 @@ section {
 
 .home {
   min-height: 100vh;
-  // width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -340,119 +340,273 @@ section {
 }
 
 .about {
-    .content{
-        gap: 2rem;
-    }
+  .content {
+    gap: 2rem;
+  }
 }
 
 .dog-food,
 .cat-food {
-    padding:3rem 0;
+  padding: 3rem 0;
 
-    .content {
-        text-align: center;
-        // transition: .2 linear; not work, i set this in * also,but not work either
+  .content {
+    text-align: center;
+    // transition: .2 linear; not work, i set this in * also,but not work either
 
-        h3 {
-            font-size: 3.5rem;
-        }
-
-        .amount {
-            font-size: 3rem;
-            font-weight: bolder;
-            color: $black;
-        }
-
-        a {
-            
-            .shop-now-pics {
-                height:15rem;
-                margin-top: 1rem;
-            }
-
-            &:hover .shop-now-pics{
-                transform: rotate(15deg);
-            }
-        }
-    }
-}
-
-// shop section 
-
-.shop .box-container{
-  @include grid(30rem);
-
-  .box{
-    position: relative;
-    overflow: hidden;
-
-    &:hover{
-
-      .image img{
-        transform: scale(1.1);
-      }
-
-      .icons{        
-        transform: translateX(0rem);
-      }
+    h3 {
+      font-size: 3.5rem;
     }
 
-    .image{
-      height:45rem;
-      width:100%;
-      overflow: hidden;
-
-      img{
-        height: 100%;
-        width:100%;
-        object-fit: cover;
-      }
+    .amount {
+      font-size: 3rem;
+      font-weight: bolder;
+      color: $black;
     }
 
-    .icons{
-      position: absolute;
-      top:1rem; right:2rem;
-      z-index: 10;
-      transform: translateX(10rem);
-
-      a{
-        display: block;
-        width: 5rem;
-        height:5rem;
-        line-height: 5rem;
-        font-size: 2.2rem;
+    a {
+      .shop-now-pics {
+        height: 15rem;
         margin-top: 1rem;
-        background: $white;
-        color:$black;
-        text-align: center;
-
-        &:hover{
-          color:$white;
-          background: $carrot-color;
-        }
-      }
-    }
-
-    .content{
-      padding:1rem 0;
-      text-align: center;
-
-      h3{
-        font-size: 2.2rem;
-        color:$black;
-        padding-bottom: .5rem;
       }
 
-      .amount{
-        font-size: 2rem;
-        color:$carrot-color;
+      &:hover .shop-now-pics {
+        transform: rotate(15deg);
       }
     }
   }
 }
 
+// shop section
 
-.footer{
+.shop .box-container {
+  @include grid(30rem);
+
+  .box {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      .image img {
+        transform: scale(1.1);
+      }
+
+      .icons {
+        transform: translateX(0rem);
+      }
+    }
+
+    .image {
+      height: 45rem;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .icons {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      z-index: 10;
+      transform: translateX(10rem);
+
+      a {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        font-size: 2.2rem;
+        margin-top: 1rem;
+        background: $white;
+        color: $black;
+        text-align: center;
+
+        &:hover {
+          color: $white;
+          background: $carrot-color;
+        }
+      }
+    }
+
+    .content {
+      padding: 1rem 0;
+      text-align: center;
+
+      h3 {
+        font-size: 2.2rem;
+        color: $black;
+        padding-bottom: 0.5rem;
+      }
+
+      .amount {
+        font-size: 2rem;
+        color: $carrot-color;
+      }
+    }
+  }
+}
+
+// our services section
+
+.services .box-container {
+  @include grid(30rem);
+
+  .box {
+    background-color: $light-bg;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+
+    &:nth-child(even) {
+      border-radius: 79% 21% 81% 19% / 58% 93% 7% 42%;
+    }
+
+    &:hover {
+      border-radius: 0.5rem;
+    }
+  }
+
+  i {
+    background: $carrot-color;
+    height: 6.5rem;
+    width: 6.5rem;
+    border-radius: 50%;
+    line-height: 6.5rem;
+    font-size: 3rem;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    color: $black;
+    padding: 1rem 0;
+  }
+}
+
+// choose a plan section
+
+.plan .box-container {
+  @include grid(30rem);
+
+  .box {
+    position: relative;
+    background-color: $light-bg;
+    padding: 3rem;
+
+    border-radius: 0.5rem;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: -2rem;
+    right: 2rem;
+    background: $white;
+  }
+
+  .title {
+    color: $carrot-color;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .day {
+    color: $black;
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .icon {
+    color: $carrot-color;
+    font-size: 5rem;
+    text-align: left;
+  }
+
+  .list {
+    margin: 1rem 0;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      color: $light-color;
+      padding: 1rem 0;
+
+      span {
+        color: $carrot-color;
+      }
+    }
+  }
+
+  .amount {
+    color: $black;
+    font-size: 5rem;
+    font-weight: bolder;
+
+    span {
+      font-size: 3rem;
+    }
+  }
+}
+
+// contact us section
+
+.contact {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+
+  .image {
+    flex: 1 1 30rem;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  form {
+    flex: 1 1 50rem;
+    padding: 2rem 7%;
+    // display: flex; input is inline-block, but set width 100% will work.
+    // flex-direction: column;
+
+    .btn {
+      @include form-btn();
+    }
+
+    h3 {
+      font-size: 3.5rem;
+      padding-bottom: 1rem;
+      color: $black;
+    }
+
+    .box,
+    textarea {
+      border-bottom: $border;
+      border-width: 0.1rem;
+      font-size: 1.6rem;
+      width: 100%;
+      text-transform: none;
+      color: $black;
+      padding: 1.5rem 0;
+      margin: 1rem 0;
+    }
+
+    textarea {
+      height: 15rem;
+      resize: none;
+      margin: 2rem 0;
+    }
+  }
+}
+
+.footer {
   position: relative;
   background: url(../images/footer_background.jpg) no-repeat;
   background-position: center;
@@ -460,44 +614,41 @@ section {
   padding-top: 10rem;
   padding-bottom: 2rem;
 
-  img{
+  img {
     position: absolute;
-    top:0; left:0;
-    height:10rem;
-    width:100%;
+    top: 0;
+    left: 0;
+    height: 10rem;
+    width: 100%;
   }
 
-  .share{
+  .share {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap:1.5rem;
+    gap: 1.5rem;
 
-    a{
+    a {
       @include white-btn();
 
-      i{
-        padding-right: .5rem;
+      i {
+        padding-right: 0.5rem;
       }
     }
   }
 
-  .credit{
+  .credit {
     text-align: center;
-    color:$white;
+    color: $white;
     font-size: 2rem;
-    padding:2rem 1rem;
+    padding: 2rem 1rem;
     margin-top: 2.5rem;
 
-    span{
-      color:$carrot-color;
+    span {
+      color: $carrot-color;
     }
   }
 }
-
-
-
-
 
 @media (max-width: 991px) {
   html {
@@ -514,7 +665,7 @@ section {
 
   .home {
     justify-content: center;
-    background-position: right;
+    // background-position: right;
 
     h3 {
       font-size: 4.5rem;

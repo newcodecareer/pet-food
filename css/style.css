@@ -78,25 +78,10 @@ section {
   color: #fff;
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
     transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
   }
 }
 .header {
@@ -119,7 +104,7 @@ section {
 .header .logo {
   font-size: 2.5rem;
   color: #130f40;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .header i {
   color: #e67e22;
@@ -155,8 +140,7 @@ section {
 }
 .header .login-form.active {
   display: block;
-  -webkit-animation: fadeIn 0.4s liner;
-          animation: fadeIn 0.4s liner;
+  animation: fadeIn 0.4s linear;
 }
 .header .login-form h3 {
   color: #130f40;
@@ -213,6 +197,7 @@ section {
 
 .home {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -372,6 +357,139 @@ section {
   color: #e67e22;
 }
 
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.services .box-container .box {
+  background-color: #eee;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 33% 67% 70% 30%/30% 30% 70% 70%;
+}
+.services .box-container .box:nth-child(even) {
+  border-radius: 79% 21% 81% 19%/58% 93% 7% 42%;
+}
+.services .box-container .box:hover {
+  border-radius: 0.5rem;
+}
+.services .box-container i {
+  background: #e67e22;
+  height: 6.5rem;
+  width: 6.5rem;
+  border-radius: 50%;
+  line-height: 6.5rem;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.services .box-container h3 {
+  font-size: 2.2rem;
+  color: #130f40;
+  padding: 1rem 0;
+}
+
+.plan .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.plan .box-container .box {
+  position: relative;
+  background-color: #eee;
+  padding: 3rem;
+  border-radius: 0.5rem;
+}
+.plan .box-container .btn {
+  position: absolute;
+  bottom: -2rem;
+  right: 2rem;
+  background: #fff;
+}
+.plan .box-container .title {
+  color: #e67e22;
+  font-size: 2rem;
+  text-align: center;
+}
+.plan .box-container .day {
+  color: #130f40;
+  font-size: 3.5rem;
+  text-align: center;
+}
+.plan .box-container .icon {
+  color: #e67e22;
+  font-size: 5rem;
+  text-align: left;
+}
+.plan .box-container .list {
+  margin: 1rem 0;
+}
+.plan .box-container .list p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: #666;
+  padding: 1rem 0;
+}
+.plan .box-container .list p span {
+  color: #e67e22;
+}
+.plan .box-container .amount {
+  color: #130f40;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+.plan .box-container .amount span {
+  font-size: 3rem;
+}
+
+.contact {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.contact .image {
+  flex: 1 1 30rem;
+}
+.contact .image img {
+  width: 80%;
+}
+.contact form {
+  flex: 1 1 50rem;
+  padding: 2rem 7%;
+}
+.contact form .btn {
+  width: 100%;
+  text-align: center;
+}
+.contact form .btn:hover {
+  background: #130f40;
+}
+.contact form h3 {
+  font-size: 3.5rem;
+  padding-bottom: 1rem;
+  color: #130f40;
+}
+.contact form .box,
+.contact form textarea {
+  border-bottom: 0.2rem solid #130f40;
+  border-width: 0.1rem;
+  font-size: 1.6rem;
+  width: 100%;
+  text-transform: none;
+  color: #130f40;
+  padding: 1.5rem 0;
+  margin: 1rem 0;
+}
+.contact form textarea {
+  height: 15rem;
+  resize: none;
+  margin: 2rem 0;
+}
+
 .footer {
   position: relative;
   background: url(../images/footer_background.jpg) no-repeat;
@@ -429,7 +547,6 @@ section {
   }
   .home {
     justify-content: center;
-    background-position: right;
   }
   .home h3 {
     font-size: 4.5rem;
